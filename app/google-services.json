@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "235277144826",
-    "project_id": "proyectito-f3dad",
-    "storage_bucket": "proyectito-f3dad.firebasestorage.app"
+    "project_number": "207995641123",
+    "project_id": "mobileacademicmanagement",
+    "storage_bucket": "mobileacademicmanagement.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:235277144826:android:c305270226a78a22992f43",
+        "mobilesdk_app_id": "1:207995641123:android:6805a2beb1b1711be4c096",
         "android_client_info": {
           "package_name": "com.example.project"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyC-ZrOvstVBnXUEl0G5ZL66YKjvAjefmDg"
+          "current_key": "AIzaSyA0DSaZSDACpp3tSZnCscQWaAqwUR0hPoM"
         }
       ],
       "services": {

@@ -33,23 +33,24 @@ class ModifyUsers : AppCompatActivity(), SearchView.OnQueryTextListener {
     }
 
     private fun loadUsersFromFirebase() {
-        db.collection("users") // Asegúrate de que tu colección de usuarios se llama "users"
+        db.collection("users")
+            .whereIn("rol", listOf("0", "1")) // Solo obtener estudiantes y profesores
             .get()
             .addOnSuccessListener { result ->
                 userList.clear()
                 originalUserList.clear()
                 for (document in result) {
                     val name = document.getString("name") ?: ""
-                    val roleString = document.getString("rol") ?: "-1" // Obtén el rol como String
+                    val roleString = document.getString("rol") ?: "-1"
                     val role = try {
                         roleString.toInt()
                     } catch (e: NumberFormatException) {
-                        -1 // Maneja el caso en que el String no sea un número válido
+                        -1
                     }
                     val userId = document.id
                     val user = User(name, role.toString(), userId)
                     userList.add(user)
-                    originalUserList.add(user) // Guarda la lista original
+                    originalUserList.add(user)
                 }
                 adapter.notifyDataSetChanged()
                 if (userList.isEmpty()) {
@@ -67,6 +68,7 @@ class ModifyUsers : AppCompatActivity(), SearchView.OnQueryTextListener {
                 binding.noResults.text = "Error al cargar usuarios."
             }
     }
+
 
     override fun onQueryTextSubmit(query: String?): Boolean {
         return false // No necesitamos realizar ninguna acción especial al enviar la búsqueda
