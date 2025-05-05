@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="6dp"
+    app:cardUseCompatPadding="true"
+    app:cardBackgroundColor="@android:color/white">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <!-- Nombre del estudiante -->
+        <TextView
+            android:id="@+id/tvStudentName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Jane Doe"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <!-- Etiqueta "Enter Grade" -->
+        <TextView
+            android:id="@+id/tvEnterGrade"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Enter Grade"
+            android:textSize="18dp"
+            android:textColor="#757575"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- Botón "Assign Grade" -->
+        <Button
+            android:id="@+id/btnAssignGrade"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Assign Grade"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"
+            app:backgroundTint="@null"
+            android:background="@drawable/rounded_teal_button"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@id/tvStudentName"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <!-- Campo para ingresar la calificación -->
+        <EditText
+            android:id="@+id/etGrade"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/rounded_edittext_teal_border"
+            android:gravity="center_vertical"
+            android:hint="10.5, 0"
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="6dp"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvEnterGrade" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>
